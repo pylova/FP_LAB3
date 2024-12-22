@@ -105,56 +105,7 @@
 ```
 ### Тестування
 ```bash
-$ sbcl --script scripts/constructive-sort.lisp 
-Test 1... passed
-Test 2... passed
-Test 3... passed
-Test 4... passed
-Test 5... passed
-Test 6... passed
-```
-## Лістинг функції з використанням деструктивного підходу
-```lisp
-(defun destructive-sort (lst)
-"Constructs sorted list by non-descending,
- using insertion sort, linear search from the right"
-  (let ((sorted-lst (copy-list lst)))
-    (loop for i from 1 below (list-length sorted-lst) do
-      (let ((x (nth i sorted-lst)) (j i))
-        (loop while (and (> j 0) (< x (nth (- j 1) sorted-lst))) do
-          (setf (nth j sorted-lst) (nth (- j 1) sorted-lst))
-          (decf j)
-        )
-        (setf (nth j sorted-lst) x)
-      )
-    )
-    sorted-lst
-  )
-)
-```
-### Тестові набори та утиліти
-```lisp
-(defun check-destructive-sort (name input expected)
-"Execute `destructive-sort' on `input',
- compare result with `expected' and print comparison status"
-  (format t "Test ~a... ~:[FAILED~;passed~]~%"
-    name (equal (destructive-sort input) expected) 
-  )
-)
-
-(defun test-destructive-sort ()
-  (check-destructive-sort "1" '(1 2 3 4 5) '(1 2 3 4 5))
-  (check-destructive-sort "2" '(5 4 3 2 1) '(1 2 3 4 5))
-  (check-destructive-sort "3" '(4 1 3 2 5) '(1 2 3 4 5))
-  (check-destructive-sort "4" '(5 5 3 3 1) '(1 3 3 5 5))
-  (check-destructive-sort "5" '(1 -1 2 -2 0 0) '(-2 -1 0 0 1 2))
-  (check-destructive-sort "6" '() '())
-)
-
-(test-destructive-sort)
-```
-### Тестування
-sbcl --script lab_3.lisp
+$sbcl --script lab_3.lisp
 Functional Sort: (3 1 4 1 5 9) -> (1 1 3 4 5 9)
 Functional Sort: (9 7 5 3 1 0) -> (0 1 3 5 7 9)
 Functional Sort: (1 2 3 4 5 6) -> (1 2 3 4 5 6)
