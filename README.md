@@ -154,12 +154,20 @@ Test 6... passed
 (test-destructive-sort)
 ```
 ### Тестування
-```bash
-$ sbcl --script scripts/destructive-sort.lisp 
-Test 1... passed
-Test 2... passed
-Test 3... passed
-Test 4... passed
-Test 5... passed
-Test 6... passed
-```
+sbcl --script lab_3.lisp
+Functional Sort: (3 1 4 1 5 9) -> (1 1 3 4 5 9)
+Functional Sort: (9 7 5 3 1 0) -> (0 1 3 5 7 9)
+Functional Sort: (1 2 3 4 5 6) -> (1 2 3 4 5 6)
+Imperative Sort: (3 1 4 1 5 9) -> (1 1 3 4 5 9)
+Imperative Sort: (9 7 5 3 1 0) -> (0 1 3 5 7 9)
+Imperative Sort: (1 2 3 4 5 6) -> (1 2 3 4 5 6)
+PASSED: Functional Test 1
+PASSED: Functional Test 2
+PASSED: Functional Test 3
+PASSED: Functional Test 4
+PASSED: Functional Test 5
+PASSED: Imperative Test 1
+PASSED: Imperative Test 2
+PASSED: Imperative Test 3
+PASSED: Imperative Test 4
+PASSED: Imperative Test 5
