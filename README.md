@@ -55,8 +55,6 @@
           (decf j))
         (setf (nth (1+ j) sorted) key))) ;; Вставляємо елемент на потрібну позицію
     sorted))
-
-
 ```
 ### Тестові набори та утиліти
 ```lisp
@@ -123,3 +121,4 @@ PASSED: Imperative Test 2
 PASSED: Imperative Test 3
 PASSED: Imperative Test 4
 PASSED: Imperative Test 5
+```
