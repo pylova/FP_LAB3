@@ -84,19 +84,20 @@
 
 ;; Тести для функціональної реалізації
 (defun test-functional-sorting ()
-  (validate-functional "Functional Test 1" '(3 1 4 1 5 9) '(1 1 3 4 5 9))
-  (validate-functional "Functional Test 2" '(9 7 5 3 1) '(1 3 5 7 9))
-  (validate-functional "Functional Test 3" '(1 2 3 4 5) '(1 2 3 4 5))
-  (validate-functional "Functional Test 4" nil nil)
-  (validate-functional "Functional Test 5" '(1) '(1)))
+  (validate-functional "Functional Test 1" '(6 2 9 5 1 4 7 3 8) '(1 2 3 4 5 6 7 8 9)) 
+  (validate-functional "Functional Test 2" '(10 20 10 5 15) '(5 10 10 15 20)) 
+  (validate-functional "Functional Test 3" '(3 5 7 2 1) '(1 2 3 5 7)) 
+  (validate-functional "Functional Test 4" nil nil) 
+  (validate-functional "Functional Test 5" '(100) '(100))) 
 
 ;; Тести для імперативної реалізації
 (defun test-imperative-sorting ()
-  (validate-imperative "Imperative Test 1" '(3 1 4 1 5 9) '(1 1 3 4 5 9))
-  (validate-imperative "Imperative Test 2" '(9 7 5 3 1) '(1 3 5 7 9))
-  (validate-imperative "Imperative Test 3" '(1 2 3 4 5) '(1 2 3 4 5))
+  (validate-imperative "Imperative Test 1" '(6 2 9 5 1 4 7 3 8) '(1 2 3 4 5 6 7 8 9))
+  (validate-imperative "Imperative Test 2" '(10 20 10 5 15) '(5 10 10 15 20))
+  (validate-imperative "Imperative Test 3" '(3 5 7 2 1) '(1 2 3 5 7)) 
   (validate-imperative "Imperative Test 4" nil nil)
-  (validate-imperative "Imperative Test 5" '(1) '(1)))
+  (validate-imperative "Imperative Test 5" '(100) '(100)))
+
 
 ;; Запуск тестів
 (test-sorting)
